@@ -64,7 +64,7 @@ void			julia(void *environ, int pix_ind)
 		f.c.i = ft_lint(-f.y_wid / 2, f.y_wid / 2, env->mouse.y / env->h);
 		f.z.r = ft_lint(f.x_min, f.x_max, (float)f.x / env->w);
 		f.z.i = ft_lint(f.y_min, f.y_max, (float)f.y / env->h);
-		env->iter_buf[pix_ind] = escape_time(env, f);
+		//env->iter_buf[pix_ind] = escape_time(env, f);
 	}
 	img_pixel_put(env, f.x, f.y, choose_col(env, env->iter_buf[pix_ind]));
 }

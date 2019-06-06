@@ -15,7 +15,7 @@
 /*
  * Setup a jump table so we can grab the correct fractal function!
  */
-/* TODO: Implement Fractols for this to work
+// TODO: Implement Fractols for this to work
 static void     setup_fract_table(t_fract_jt j_table[25])
 {
 	j_table[0] = &julia;
@@ -28,12 +28,11 @@ static void     setup_fract_table(t_fract_jt j_table[25])
 	j_table[7] = &mandelbrot;
 	j_table[8] = &mandelbrot;
 }
-*/
 
 /*
  * Setup a jump table so we can grab the correct fractal function!
  */
-/* TODO: Implement Fractols for this to work
+// TODO: Implement Fractols for this to work
 static void     setup_fract_setup_table(t_f_set_jt j_table[25])
 {
 	j_table[0] = &setup_julia;
@@ -46,7 +45,6 @@ static void     setup_fract_setup_table(t_f_set_jt j_table[25])
 	j_table[7] = &setup_quadrobrot;
 	j_table[8] = &setup_quadroship;
 }
-*/
 
 /*
  * Function sets-up a jump table so that we can get the relevant fractal function
@@ -56,7 +54,7 @@ static void     setup_fract_setup_table(t_f_set_jt j_table[25])
  * We need to protect our jump table lookup by making sure our converted number
  * is actually a valid index into the jump table!
  */
-/* TODO: Implement Fractols for this to work
+// TODO: Implement Fractols for this to work
 int				get_fract_funct(void *environ, char *choice_str)
 {
 	static t_fract_jt   fractal_jt[25] = {NULL};
@@ -79,7 +77,5 @@ int				get_fract_funct(void *environ, char *choice_str)
 		env->fract_setup = fract_setup_jt[choice];
 		return (choice);
 	}
-	else
-		return (-1);
+	return (-1);
 }
-*/

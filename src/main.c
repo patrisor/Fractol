@@ -65,10 +65,12 @@ void			setup_env(t_envars *env)
 	env->iter_lim = 50;
 	// Our malloced buffer is the same size of the area of our window
 	env->iter_buf = (float *)malloc(env->size * sizeof(float));
-	// TODO: how do jump tables work?
-	//env->fract_setup(env);
+	// Jump tables 
+	env->fract_setup(env);
 	// Sets-up parameters to our color structure under the t_envars structure
 	setup_color(env);
+	//
+
 }
 
 int				main(int argc, char **argv)
@@ -78,16 +80,12 @@ int				main(int argc, char **argv)
 	env.fract_choice = -1;
 	// TODO: Implement multiple Fract`ol input
 	// Input check, and 
-	if (argc > 1 /*&& (env.fract_choice = get_fract_funct(&env, argv[1])) != -1 */)
+	if (argc > 1 && (env.fract_choice = get_fract_funct(&env, argv[1])) != -1)
 	{
 		disp_info(1);
 		// Function fills the parameters of our t_envars structure. We start 
 		// our MLX environment
 		setup_env(&env);
-
-		// TEST
-		ft_putendl(argv[1]);
-
 		return (0);
 	}
 	else

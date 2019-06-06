@@ -18,10 +18,10 @@ INCLUDES = ./includes/
 OBJ = ./obj/
 RM = /bin/rm -Rf
 
-FILES = main choose_fractal color
-#fractal_utils image render \
+FILES = main choose_fractal color fractal_funcs fractal_utils 
+#image render \
 fractal_escape_time\
-fractal_funcs fractal_setup_0 fractal_setup_1\
+fractal_setup_0 fractal_setup_1\
 mouse_hooks key_hooks loop_hooks
 CFILES = $(patsubst %, $(SRCS_DIR)%.c, $(FILES))
 OFILES = $(patsubst %, %.o, $(FILES))
