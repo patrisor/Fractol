@@ -6,7 +6,7 @@
 #    By: patrisor <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/06/04 14:04:03 by patrisor          #+#    #+#              #
-#    Updated: 2019/06/04 20:58:07 by patrisor         ###   ########.fr        #
+#    Updated: 2019/06/18 05:39:01 by patrisor         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,8 @@ INCLUDES = ./includes/
 OBJ = ./obj/
 RM = /bin/rm -Rf
 
-FILES = main choose_fractal color fractal_funcs fractal_utils 
+FILES = main choose_fractal color fractal_funcs fractal_utils \
+		fractal_escape_time 
 #image render \
 fractal_escape_time\
 fractal_setup_0 fractal_setup_1\

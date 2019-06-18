@@ -6,7 +6,7 @@
 /*   By: patrisor <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/04 14:10:13 by patrisor          #+#    #+#             */
-/*   Updated: 2019/06/04 21:07:37 by patrisor         ###   ########.fr       */
+/*   Updated: 2019/06/18 06:25:01 by patrisor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,8 +69,12 @@ void			setup_env(t_envars *env)
 	env->fract_setup(env);
 	// Sets-up parameters to our color structure under the t_envars structure
 	setup_color(env);
-	//
-
+	// Initializes our mlx environment
+	env->mlx = mlx_init();
+	// Creates a new window
+	env->win = mlx_new_window(env->mlx, env->w, env->h, "Fractol 42");
+	// TODO
+	// init_img();
 }
 
 int				main(int argc, char **argv)
