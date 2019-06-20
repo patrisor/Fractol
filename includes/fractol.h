@@ -14,6 +14,8 @@
 # define FRACTOL_H
 # define WIN_WIDTH 1024
 # define WIN_HEIGHT 576
+#define IS_LEFT(x) ((x) == 0 || (x) == 2)
+#define IS_TOP(x) ((x) == 0 || (x) == 1)
 #include "libft.h"
 #include <pthread.h>
 #include <mlx.h>

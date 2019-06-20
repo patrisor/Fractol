@@ -13,6 +13,14 @@
 #include "fractol.h"
 
 /*
+ * Useful function to get the row, col value from a flattened
+ */
+int		idx(int row, int col, int dim)
+{
+	return (row * dim + col);
+}
+
+/*
  * Linear INTerpolation between two points given a decimal percent
  */
 double		ft_lint(double start, double end, double decimal_percent)
@@ -20,6 +28,17 @@ double		ft_lint(double start, double end, double decimal_percent)
 	if (start == end)
 		return (start);
 	return (start * (1.0 - decimal_percent) + (end * decimal_percent));
+}
+
+/*
+ * Function performs the absolute squared of our complex number. Recall for a 
+ * complex number z where z = a + bi that the absolute value of z: |z| = sqrt(a^2  + b^2)
+ */
+t_dcmplx	abs_sqr(t_dcmplx z)
+{
+	z.rsqr = (z.r * z.r);
+	z.isqr = (z.i * z.i);
+	return (z);
 }
 
 /*

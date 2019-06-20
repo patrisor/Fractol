@@ -30,6 +30,58 @@ void	setup_color(t_envars *env)
 }
 
 /*
+ * Function changes colors of our fractal
+ */
+void	toggle_palette(t_envars *env)
+{
+	env->color_style = (env->color_style + 1) % 4;
+	if (env->color_style == 0)
+	{
+		env->c.r_freq = 0.33;
+		env->c.g_freq = 0.33;
+		env->c.b_freq = 0.33;
+	}
+	if (env->color_style == 1)
+	{
+		env->c.r_freq = 0.33;
+		env->c.g_freq = 0.33;
+		env->c.b_freq = 0.00;
+	}
+	if (env->color_style == 2)
+	{
+		env->c.r_freq = 0.33;
+		env->c.g_freq = 0.00;
+		env->c.b_freq = 0.33;
+	}
+	if (env->color_style == 3)
+	{
+		env->c.r_freq = 0.00;
+		env->c.g_freq = 0.33;
+		env->c.b_freq = 0.33;
+	}
+}
+
+/*
+ * Grabs a random Colors and fixes it
+ */
+void	color_surprise(t_envars *env)
+{
+	env->c.r_freq = rand() % 10;
+	env->c.g_freq = rand() % 10;
+	env->c.b_freq = rand() % 10;
+}
+
+/*
+ * Randomly changes the colors
+ */
+void	psychedelic_surprise(t_envars *env)
+{
+	env->c.r_phase = rand() % 20;
+	env->c.g_phase = rand() % 20;
+	env->c.b_phase = rand() % 20;
+}
+
+/*
  * Function generates regular repeating color gradients by using a sin wave 
  * and shifting the frequency and phase of r, g, b color components.
  * The center of our color range is 127 (because 255 is max), thus the width 

@@ -45,9 +45,17 @@ static void		disp_info(int mode)
 }
 
 /*
- *
+ * Specifies our hooks for the loop (all buttons to be pressed)
  */
-
+void		start_hooks(t_envars *env)
+{
+	mlx_key_hook(env->win, keydown_hook, env);
+	mlx_hook(env->win, 2, 0, key_pressed_hook, env);
+	mlx_hook(env->win, 4, 0, mouse_pressed_hook, env);
+	mlx_hook(env->win, 5, 0, mouse_released_hook, env);
+	mlx_hook(env->win, 6, 0, mouse_moved_hook, env);
+	mlx_loop_hook(env->mlx, loop_hook, env);
+}
 
 /*
  * Function fills the parameters of our t_envars structure. We start our MLX
@@ -73,8 +81,16 @@ void			setup_env(t_envars *env)
 	env->mlx = mlx_init();
 	// Creates a new window
 	env->win = mlx_new_window(env->mlx, env->w, env->h, "Fractol 42");
-	// TODO
-	// init_img();
+	// use mlx functions to initialize our image that we will be drawing on 
+	init_img(env);
+	// Initializes hooks for our mouse 
+	init_mouse(env);
+	// Specifies our hooks for the loop (all buttons to be pressed)
+	start_hooks(env);
+	// 
+
+	// Infinite Loop
+	mlx_loop(env->mlx);
 }
 
 int				main(int argc, char **argv)

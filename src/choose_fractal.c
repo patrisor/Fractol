@@ -13,9 +13,9 @@
 #include "fractol.h"
 
 /*
- * Setup a jump table so we can grab the correct fractal function!
+ * Setup a jump table so we can grab the correct fractal function! Every other
+ * fractol this man creates is just a variation of the julia or mandelbrot set
  */
-// TODO: Implement Fractols for this to work
 static void     setup_fract_table(t_fract_jt j_table[25])
 {
 	j_table[0] = &julia;
@@ -35,7 +35,6 @@ static void     setup_fract_table(t_fract_jt j_table[25])
 static void     setup_fract_setup_table(t_f_set_jt j_table[25])
 {
 	j_table[0] = &setup_julia;
-	/* TODO: Implement Fractols for this to work
 	j_table[1] = &setup_mandelbrot;
 	j_table[2] = &setup_bship;
 	j_table[3] = &setup_trijulia;
@@ -44,7 +43,6 @@ static void     setup_fract_setup_table(t_f_set_jt j_table[25])
 	j_table[6] = &setup_quadjulia;
 	j_table[7] = &setup_quadrobrot;
 	j_table[8] = &setup_quadroship;
-	*/
 }
 
 /*
@@ -55,8 +53,7 @@ static void     setup_fract_setup_table(t_f_set_jt j_table[25])
  * We need to protect our jump table lookup by making sure our converted number
  * is actually a valid index into the jump table!
  */
-// TODO: Implement Fractols for this to work
-int				get_fract_funct(void *environ, char *choice_str)
+int	get_fract_funct(void *environ, char *choice_str)
 {
 	static t_fract_jt   fractal_jt[25] = {NULL};
 	static t_f_set_jt   fract_setup_jt[25] = {NULL};

@@ -103,7 +103,7 @@ float	escape_time(t_envars *env, t_fractal f)
 	z = abs_sqr(z);
 	while (z.rsqr + z.isqr <= 4.0 && iter < env->iter_lim)
 	{
-		// 
+		// Calculates the real and imaginary values for mandelbrot
 		calc_z(env, &tmp_z, z, c);
 		if (z.r == tmp_z.r && z.i == tmp_z.i)
 		{

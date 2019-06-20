@@ -19,11 +19,8 @@ OBJ = ./obj/
 RM = /bin/rm -Rf
 
 FILES = main choose_fractal color fractal_funcs fractal_utils \
-		fractal_escape_time 
-#image render \
-fractal_escape_time\
-fractal_setup_0 fractal_setup_1\
-mouse_hooks key_hooks loop_hooks
+	fractal_escape_time fractal_setup_0 fractal_setup_1 \
+	image render mouse_hooks loop_hooks key_hooks
 CFILES = $(patsubst %, $(SRCS_DIR)%.c, $(FILES))
 OFILES = $(patsubst %, %.o, $(FILES))
 CFLAGS = -Wall -Wextra -Werror -O2 -funroll-loops
