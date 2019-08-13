@@ -3,15 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   window.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pbondoer <pbondoer@student.42.fr>          +#+  +:+       +#+        */
+/*   By: patrisor <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/26 05:33:42 by pbondoer          #+#    #+#             */
-/*   Updated: 2019/08/12 15:07:09 by patrisor         ###   ########.fr       */
+/*   Created: 2019/08/12 14:55:22 by patrisor          #+#    #+#             */
+/*   Updated: 2019/08/12 15:09:27 by patrisor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include "mlx.h"
 #include "fractol.h"
 
 t_mlx		*mlxdel(t_mlx *mlx)
@@ -24,25 +22,32 @@ t_mlx		*mlxdel(t_mlx *mlx)
 	return (NULL);
 }
 
-t_mlx		*init(t_fractal *f)
+/*
+ * Initializes our mlx environemnt. Links the environemnet with pointers
+ * Allocates enoug hmeory for the area of the available pixels we will have
+ * Sets struct variables to initial parameters.
+ */
+t_mlx		*init(t_fractol *f)
 {
 	t_mlx	*mlx;
-	char	*title;
 
 	if ((mlx = ft_memalloc(sizeof(t_mlx))) == NULL)
 		return (NULL);
-	title = ft_strjoin("Fract'ol - ", f->name);
 	if ((mlx->mlx = mlx_init()) == NULL ||
 		(mlx->window = mlx_new_window(mlx->mlx, WIN_WIDTH,
-			WIN_HEIGHT, title)) == NULL ||
+			WIN_HEIGHT, ft_strjoin("Fract'ol - ", f->name))) == NULL ||
 		(mlx->image = new_image(mlx)) == NULL ||
 		(mlx->data = ft_memalloc(sizeof(t_pixel) * WIN_WIDTH
 								* WIN_HEIGHT)) == NULL)
 		return (mlxdel(mlx));
+	// Sets initial states
 	mlx->mouse.isdown = 0;
 	mlx->fractal = f;
+	// Locks the mouse for the julia set
 	mlx->mouselock = 1 - f->mouse;
+	// Colors
 	mlx->palette = get_palettes();
+	// Smooth or not smooth
 	mlx->smooth = 0;
 	return (mlx);
 }

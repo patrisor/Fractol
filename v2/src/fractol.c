@@ -6,7 +6,7 @@
 /*   By: patrisor <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/17 22:14:21 by patrisor          #+#    #+#             */
-/*   Updated: 2019/07/17 22:51:52 by patrisor         ###   ########.fr       */
+/*   Updated: 2019/08/12 14:50:13 by patrisor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ t_fractol		*get_fractols(void)
 
 /*
  * Match what was passed as parameter and compare it to given fractol definitions
+ * Returns a fractol object in this given format: name, viewport, pixel, mouse
  */
 t_fractol		*fractol_match(char *str)
 {

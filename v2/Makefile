@@ -6,7 +6,7 @@
 #    By: patrisor <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/07/17 18:51:59 by patrisor          #+#    #+#              #
-#    Updated: 2019/07/17 22:16:30 by patrisor         ###   ########.fr        #
+#    Updated: 2019/08/12 23:29:08 by patrisor         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,16 +19,16 @@ OBJDIR	= ./obj
 
 # src / obj files
 SRC		= main.c \
-		  fractol.c
-		  #window.c \
+		  fractol.c \
+		  viewport.c \
+		  window.c \
 		  image.c \
-		  mouse.c \
-		  keyboard.c \
-		  zoom.c \
 		  palette.c \
 		  draw.c \
 		  color.c \
-		  viewport.c \
+		  mouse.c \
+		  keyboard.c \
+		  zoom.c \
 		  $(addprefix fractals/,$(shell ls $(SRCDIR)/fractals | grep -E ".+\.c"))
 
 OBJ		= $(addprefix $(OBJDIR)/,$(SRC:.c=.o))

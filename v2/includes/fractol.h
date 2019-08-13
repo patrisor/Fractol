@@ -6,7 +6,7 @@
 /*   By: patrisor <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/17 20:51:29 by patrisor          #+#    #+#             */
-/*   Updated: 2019/07/17 22:51:32 by patrisor         ###   ########.fr       */
+/*   Updated: 2019/08/12 23:28:21 by patrisor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,10 @@
 
 # include "libft.h"
 # include "mlx.h"
+# include "keycode_mac.h"
+# include <math.h>
 # include <stdint.h>
+# include <stddef.h>
 # include <pthread.h>
 
 # define WIN_WIDTH 1280
