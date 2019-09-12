@@ -6,7 +6,7 @@
 /*   By: patrisor <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/17 22:14:21 by patrisor          #+#    #+#             */
-/*   Updated: 2019/09/09 15:43:28 by patrisor         ###   ########.fr       */
+/*   Updated: 2019/09/09 18:39:46 by patrisor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,14 @@ t_fractol		*fractol_match(char *str)
 		if (ft_strcmp(f[i].name, str) == 0)
 			return(&f[i]);
 	return(&f[i]);
+}
+
+t_fractol	*init_fractol(char *name)
+{
+	t_fractol	*ret;
+
+	ret = fractol_match(name);
+	if (ret->name == NULL)
+		return (NULL);
+	return (ret);
 }

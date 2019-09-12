@@ -6,7 +6,7 @@
 /*   By: patrisor <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/17 20:51:29 by patrisor          #+#    #+#             */
-/*   Updated: 2019/08/12 23:28:21 by patrisor         ###   ########.fr       */
+/*   Updated: 2019/09/11 16:17:46 by patrisor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,8 +128,10 @@ struct				s_mlx
 	int			mouselock;
 };
 
+void				put_instructions(int code);
 t_mlx				*mlxdel(t_mlx *mlx);
-t_mlx				*init(t_fractol *f);
+t_mlx				*init_mlx(t_fractol *f);
+t_fractol			*init_fractol(char *name);
 void				render(t_mlx *mlx);
 void				draw(t_mlx *mlx);
 int					hook_mousedown(int button, int x, int y, t_mlx *mlx);

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   palette.c                                          :+:      :+:    :+:   */
+/*   visual.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: patrisor <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 15:19:20 by patrisor          #+#    #+#             */
-/*   Updated: 2019/09/09 15:46:12 by patrisor         ###   ########.fr       */
+/*   Updated: 2019/09/11 16:19:04 by patrisor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,4 +27,30 @@ t_palette	*get_palettes(void)
 			0x0000FF, 0xFF00FF, 0xFF0000}};
 	array[4] = (t_palette){0, 0, {0}};
 	return (array);
+}
+
+void		put_instructions(int code)
+{
+	if (code == 0)
+	{
+		ft_putendl("\n-------INSTRUCTIONS-------\n");
+		ft_putendl("ESC: exit");
+		ft_putendl("P: Pause (Julia set)");
+		ft_putendl("\n-----ADJUST ITERATIONS-----\n");
+		ft_putendl("[ : Less Iterations");
+		ft_putendl("] : More Iterations");
+		ft_putendl("\n------ZOOM + MOVEMENT------\n");
+		ft_putendl("- : Zoom Out");
+		ft_putendl("= : Zoom In");
+		ft_putendl("Scroll Wheel: Zoom where mouse is");
+		ft_putendl("KEY_DOWN: Move Fractal Down");
+		ft_putendl("KEY_UP: Move Fractal Up");
+		ft_putendl("KEY_LEFT: Move Fractal Left");
+		ft_putendl("KEY_RIGHT: Move Fractal Right");
+		ft_putendl("Left Mouse Down: Pan in any direction");
+		ft_putendl("0: reset fractal");
+		ft_putendl("\n----------COLORS----------\n");
+		ft_putendl("1 - 4: Change Colors");
+		ft_putendl("L: Linear Colors");
+	}
 }

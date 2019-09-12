@@ -6,7 +6,7 @@
 /*   By: patrisor <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 14:55:22 by patrisor          #+#    #+#             */
-/*   Updated: 2019/09/09 15:46:55 by patrisor         ###   ########.fr       */
+/*   Updated: 2019/09/09 16:30:31 by patrisor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,11 @@ t_mlx		*mlxdel(t_mlx *mlx)
 	return (NULL);
 }
 
-t_mlx		*init(t_fractol *f)
+t_mlx		*init_mlx(t_fractol *f)
 {
 	t_mlx	*mlx;
 
-	if ((mlx = ft_memalloc(sizeof(t_mlx))) == NULL)
+	if (f == NULL || (mlx = ft_memalloc(sizeof(t_mlx))) == NULL)
 		return (NULL);
 	if ((mlx->mlx = mlx_init()) == NULL ||
 		(mlx->window = mlx_new_window(mlx->mlx, WIN_WIDTH,

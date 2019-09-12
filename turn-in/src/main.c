@@ -6,7 +6,7 @@
 /*   By: patrisor <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/17 20:49:53 by patrisor          #+#    #+#             */
-/*   Updated: 2019/09/09 16:03:35 by patrisor         ###   ########.fr       */
+/*   Updated: 2019/09/11 19:09:11 by patrisor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,21 +24,20 @@ int		hook_expose(t_mlx *mlx)
 	return (0);
 }
 
+#include <stdio.h>
 int		main(int argc, char **argv)
 {
+	int			code;
 	t_mlx		*mlx;
-	t_fractol	*f;
-
-	if (argc != 2)
-		return (die("usage: ./fractol [fractol option]"));
-	f = fractol_match(argv[1]);
-	if (f->name == NULL)
-		return (die("error: invalid fractal name"));
-	if ((mlx = init(f)) == NULL)
-		return (die("error: mlx couldn't initialize properly"));
+	
+	if (argc < 2 || argc > 3)
+		return (die("usage: ./fractol [fractal] [fractal]"));
+	code = (argc == 3) ? fork() : 0;
+	if ((mlx = init_mlx(init_fractol(((code == 0) ? argv[1] : argv[2])))) == NULL)
+		return (die("error: first mlx couldn't initialize properly"));	
+	put_instructions(code);
 	reset_viewport(mlx);
 	render(mlx);
-	//while(1); // DELETE
 	mlx_key_hook(mlx->window, hook_keydown, mlx);
 	mlx_expose_hook(mlx->window, hook_expose, mlx);
 	mlx_hook(mlx->window, 4, 1L << 2, hook_mousedown, mlx);

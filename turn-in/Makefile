@@ -6,7 +6,7 @@
 #    By: patrisor <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/07/17 18:51:59 by patrisor          #+#    #+#              #
-#    Updated: 2019/08/12 23:29:08 by patrisor         ###   ########.fr        #
+#    Updated: 2019/09/09 19:03:38 by patrisor         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ SRC		= main.c \
 		  viewport.c \
 		  window.c \
 		  image.c \
-		  palette.c \
+		  visual.c \
 		  draw.c \
 		  color.c \
 		  mouse.c \
