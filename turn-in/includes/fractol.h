@@ -6,7 +6,7 @@
 /*   By: patrisor <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/17 20:51:29 by patrisor          #+#    #+#             */
-/*   Updated: 2019/09/11 16:17:46 by patrisor         ###   ########.fr       */
+/*   Updated: 2019/09/11 21:33:52 by patrisor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,8 @@ typedef struct		s_complex
 {
 	double		r;
 	double		i;
+	double		rsqr;
+	double		isqr;
 }					t_complex;
 
 typedef struct		s_viewport
@@ -74,6 +76,7 @@ typedef struct		s_viewport
 	double		offx;
 	double		offy;
 	long		max;
+	int			d;
 	t_complex	mouse;
 }					t_viewport;
 
@@ -128,6 +131,8 @@ struct				s_mlx
 	int			mouselock;
 };
 
+void				calc_z(t_viewport *env, t_complex *tmp_z, t_complex z, t_complex c);
+t_complex			abs_sqr(t_complex z);
 void				put_instructions(int code);
 t_mlx				*mlxdel(t_mlx *mlx);
 t_mlx				*init_mlx(t_fractol *f);
@@ -156,5 +161,7 @@ t_pixel				burningship_pixel(int x, int y, t_viewport *v, t_mlx *mlx);
 void				burningship_viewport(t_viewport *v);
 t_pixel				julia_pixel(int x, int y, t_viewport *v, t_mlx *mlx);
 void				julia_viewport(t_viewport *v);
+void				trijulia_viewport(t_viewport *v);
+void				quadjulia_viewport(t_viewport *v);
 
 #endif

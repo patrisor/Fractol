@@ -6,11 +6,17 @@
 /*   By: patrisor <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 23:26:33 by patrisor          #+#    #+#             */
-/*   Updated: 2019/09/09 16:30:45 by patrisor         ###   ########.fr       */
+/*   Updated: 2019/09/11 19:36:15 by patrisor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
+
+int		hook_expose(t_mlx *mlx)
+{
+	render(mlx);
+	return (0);
+}
 
 int		draw_hooks(int key, t_mlx *mlx)
 {

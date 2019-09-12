@@ -6,7 +6,7 @@
 /*   By: patrisor <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 13:31:01 by patrisor          #+#    #+#             */
-/*   Updated: 2019/09/09 15:40:31 by patrisor         ###   ########.fr       */
+/*   Updated: 2019/09/11 21:40:12 by patrisor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,17 +23,16 @@ t_pixel		julia_pixel(int x, int y, t_viewport *v, t_mlx *mlx)
 	z = screen_to_complex(x, y, v);
 	c = v->mouse;
 	i = -1;
-	while (z.r * z.r + z.i * z.i < (1 << 8) && (++i < v->max))
+	z = abs_sqr(z);
+	while (z.rsqr + z.isqr < (1 << 8) && (++i < v->max))
 	{
-		temp.r = z.r * z.r - z.i * z.i + c.r;
-		temp.i = z.r * z.i * 2 + c.i;
+		calc_z(v, &temp, z, c);
 		if (z.r == temp.r && z.i == temp.i)
 		{
 			i = v->max;
 			break ;
 		}
-		z.r = temp.r;
-		z.i = temp.i;
+		z = abs_sqr(temp);
 	}
 	return ((t_pixel){.c = z, .i = i});
 }
@@ -44,4 +43,23 @@ void		julia_viewport(t_viewport *v)
 	v->xmax = 2.0f;
 	v->ymin = -2.0f;
 	v->ymax = 2.0f;
+	v->d = 2;
+}
+
+void		trijulia_viewport(t_viewport *v)
+{
+	v->xmin = -2.0f;
+	v->xmax = 2.0f;
+	v->ymin = -2.0f;
+	v->ymax = 2.0f;
+	v->d = 3;
+}
+
+void		quadjulia_viewport(t_viewport *v)
+{
+	v->xmin = -2.0f;
+	v->xmax = 2.0f;
+	v->ymin = -2.0f;
+	v->ymax = 2.0f;
+	v->d = 4;
 }

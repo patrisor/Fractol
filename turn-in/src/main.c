@@ -6,7 +6,7 @@
 /*   By: patrisor <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/17 20:49:53 by patrisor          #+#    #+#             */
-/*   Updated: 2019/09/11 19:09:11 by patrisor         ###   ########.fr       */
+/*   Updated: 2019/09/11 19:28:53 by patrisor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,6 @@ int		die(char *reason)
 	return (-1);
 }
 
-int		hook_expose(t_mlx *mlx)
-{
-	render(mlx);
-	return (0);
-}
-
-#include <stdio.h>
 int		main(int argc, char **argv)
 {
 	int			code;

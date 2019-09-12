@@ -6,7 +6,7 @@
 /*   By: patrisor <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/17 22:14:21 by patrisor          #+#    #+#             */
-/*   Updated: 2019/09/09 18:39:46 by patrisor         ###   ########.fr       */
+/*   Updated: 2019/09/11 21:35:14 by patrisor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ t_fractol		*get_fractols(void)
 	static t_fractol array[8] = {
 		{"mandelbrot", mandelbrot_viewport, mandelbrot_pixel, 0},
 		{"julia", julia_viewport, julia_pixel, 1},
+		{"trijulia", trijulia_viewport, julia_pixel, 1},
+		{"quadjulia", quadjulia_viewport, julia_pixel, 1},
 		{"burningship", burningship_viewport, burningship_pixel, 0},
 		{NULL, NULL, NULL, 0}
 	};
