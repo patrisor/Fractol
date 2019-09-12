@@ -6,7 +6,7 @@
 /*   By: patrisor <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 13:31:01 by patrisor          #+#    #+#             */
-/*   Updated: 2019/09/11 21:40:12 by patrisor         ###   ########.fr       */
+/*   Updated: 2019/09/11 22:50:12 by patrisor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ void		julia_viewport(t_viewport *v)
 	v->ymin = -2.0f;
 	v->ymax = 2.0f;
 	v->d = 2;
+	v->abs = 0;
 }
 
 void		trijulia_viewport(t_viewport *v)
@@ -53,6 +54,7 @@ void		trijulia_viewport(t_viewport *v)
 	v->ymin = -2.0f;
 	v->ymax = 2.0f;
 	v->d = 3;
+	v->abs = 0;
 }
 
 void		quadjulia_viewport(t_viewport *v)
@@ -62,4 +64,5 @@ void		quadjulia_viewport(t_viewport *v)
 	v->ymin = -2.0f;
 	v->ymax = 2.0f;
 	v->d = 4;
+	v->abs = 0;
 }

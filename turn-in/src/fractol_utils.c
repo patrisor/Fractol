@@ -6,7 +6,7 @@
 /*   By: patrisor <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/11 20:21:00 by patrisor          #+#    #+#             */
-/*   Updated: 2019/09/11 21:40:30 by patrisor         ###   ########.fr       */
+/*   Updated: 2019/09/11 22:41:56 by patrisor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,9 @@ void	calc_z(t_viewport *env, t_complex *tmp_z, t_complex z, t_complex c)
 		tmp_z->i = (4 * z.r * z.i) * (z.rsqr - z.isqr) + c.i;
 		tmp_z->r = (z.rsqr * z.rsqr) + z.isqr * (z.isqr - 6 * z.rsqr) + c.r;
 	}
-	/*
-	if (env->f.abs == 1)
+	if (env->abs == 1)
 	{
-		tmp_z->i = (tmp_z->i < 0.0f) ? -tmp_z->i : tmp_z->i;
-		tmp_z->r = (tmp_z->r < 0.0f) ? -tmp_z->r : tmp_z->r;
+		tmp_z->i = fabs(tmp_z->i);
+		tmp_z->r = fabs(tmp_z->r);
 	}
-	*/
 }

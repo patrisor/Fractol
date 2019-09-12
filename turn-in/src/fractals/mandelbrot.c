@@ -6,7 +6,7 @@
 /*   By: patrisor <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 13:21:31 by patrisor          #+#    #+#             */
-/*   Updated: 2019/09/11 21:30:58 by patrisor         ###   ########.fr       */
+/*   Updated: 2019/09/11 22:46:24 by patrisor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,17 +23,16 @@ t_pixel		mandelbrot_pixel(int x, int y, t_viewport *v, t_mlx *mlx)
 	z = screen_to_complex(x, y, v);
 	c = screen_to_complex(x, y, v);
 	i = -1;
-	while (z.r * z.r + z.i * z.i < (1 << 8) && (++i < v->max))
+	z = abs_sqr(z);
+	while (z.rsqr + z.isqr < (1 << 8) && (++i < v->max))
 	{
-		temp.r = z.r * z.r - z.i * z.i + c.r;
-		temp.i = z.r * z.i * 2 + c.i;
+		calc_z(v, &temp, z, c);
 		if (z.r == temp.r && z.i == temp.i)
 		{
 			i = v->max;
 			break ;
 		}
-		z.r = temp.r;
-		z.i = temp.i;
+		z = abs_sqr(temp);
 	}
 	return ((t_pixel){.c = z, .i = i});
 }
@@ -45,4 +44,28 @@ void		mandelbrot_viewport(t_viewport *v)
 	v->ymin = -1.0f;
 	v->ymax = 1.0f;
 	v->offx = -0.5f;
+	v->d = 2;
+	v->abs = 0;
+}
+
+void		bibrot_viewport(t_viewport *v)
+{
+	v->xmin = -2.0f;
+	v->xmax = 1.0f;
+	v->ymin = -1.0f;
+	v->ymax = 1.0f;
+	v->offx = -0.5f;
+	v->d = 3;
+	v->abs = 0;
+}
+
+void		tribrot_viewport(t_viewport *v)
+{
+	v->xmin = -2.0f;
+	v->xmax = 1.0f;
+	v->ymin = -1.0f;
+	v->ymax = 1.0f;
+	v->offx = -0.5f;
+	v->d = 4;
+	v->abs = 0;
 }
