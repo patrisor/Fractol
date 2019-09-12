@@ -6,7 +6,7 @@
 /*   By: patrisor <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/17 22:14:21 by patrisor          #+#    #+#             */
-/*   Updated: 2019/09/11 23:08:38 by patrisor         ###   ########.fr       */
+/*   Updated: 2019/09/11 23:27:25 by patrisor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,15 @@
 t_fractol		*get_fractols(void)
 {
 	static t_fractol array[10] = {
-		{"mandelbrot", mandelbrot_viewport, mandelbrot_pixel, 0},
-		{"bibrot", bibrot_viewport, mandelbrot_pixel, 0},
-		{"tribrot", tribrot_viewport, mandelbrot_pixel, 0},
-		{"julia", julia_viewport, julia_pixel, 1},
-		{"trijulia", trijulia_viewport, julia_pixel, 1},
-		{"quadjulia", quadjulia_viewport, julia_pixel, 1},
-		{"burningship", burningship_viewport, burningship_pixel, 0},
-		{"excalibur", excalibur_viewport, burningship_pixel, 0},
-		{"enigma", enigma_viewport, burningship_pixel, 0},
+		{"mandelbrot", mandelbrot_viewport, escape_time, 0},
+		{"bibrot", bibrot_viewport, escape_time, 0},
+		{"tribrot", tribrot_viewport, escape_time, 0},
+		{"julia", julia_viewport, escape_time, 1},
+		{"trijulia", trijulia_viewport, escape_time, 1},
+		{"quadjulia", quadjulia_viewport, escape_time, 1},
+		{"burningship", burningship_viewport, escape_time, 0},
+		{"excalibur", excalibur_viewport, escape_time, 0},
+		{"enigma", enigma_viewport, escape_time, 0},
 		{NULL, NULL, NULL, 0}
 	};
 	return (array);

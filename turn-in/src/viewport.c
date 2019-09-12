@@ -6,7 +6,7 @@
 /*   By: patrisor <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 13:43:26 by patrisor          #+#    #+#             */
-/*   Updated: 2019/09/11 20:26:41 by patrisor         ###   ########.fr       */
+/*   Updated: 2019/09/11 23:35:24 by patrisor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,15 +39,4 @@ void		reset_viewport(t_mlx *mlx)
 	viewport_fit(&mlx->viewport);
 	mlx->viewport.max = 32;
 	mlx->viewport.zoom = 1.0f;
-}
-
-t_complex	screen_to_complex(int x, int y, t_viewport *v)
-{
-	t_complex	p;
-
-	p.r = (((double)x / WIN_WIDTH) * (v->xmax - v->xmin)) * v->zoom
-		+ v->xmin + v->offx;
-	p.i = (((double)y / WIN_HEIGHT) * (v->ymax - v->ymin)) * v->zoom
-		+ v->ymin + v->offy;
-	return (p);
 }
