@@ -6,7 +6,7 @@
 /*   By: patrisor <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 14:55:22 by patrisor          #+#    #+#             */
-/*   Updated: 2019/09/09 16:30:31 by patrisor         ###   ########.fr       */
+/*   Updated: 2019/09/22 06:23:05 by patrisor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ t_mlx		*init_mlx(t_fractol *f)
 		return (NULL);
 	if ((mlx->mlx = mlx_init()) == NULL ||
 		(mlx->window = mlx_new_window(mlx->mlx, WIN_WIDTH,
-			WIN_HEIGHT, ft_strjoin("Fract'ol - ", f->name))) == NULL ||
+			WIN_HEIGHT, f->name)) == NULL ||
 		(mlx->image = new_image(mlx)) == NULL ||
 		(mlx->data = ft_memalloc(sizeof(t_pixel) * WIN_WIDTH
 								* WIN_HEIGHT)) == NULL)

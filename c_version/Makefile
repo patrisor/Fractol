@@ -6,7 +6,7 @@
 #    By: patrisor <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/07/17 18:51:59 by patrisor          #+#    #+#              #
-#    Updated: 2019/09/12 06:52:57 by patrisor         ###   ########.fr        #
+#    Updated: 2019/09/22 06:26:57 by patrisor         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,7 @@ OBJ		= $(addprefix $(OBJDIR)/,$(SRC:.c=.o))
 
 # compiler
 CC		= gcc
-CFLAGS	= -Wall -Wextra -Werror -g -ggdb3 #-fsanitize=address
+CFLAGS	= -Wall -Wextra -Werror #-g -ggdb3 -fsanitize=address
 
 # mlx library
 MLX		= ./minilibx_macos/
