@@ -6,7 +6,7 @@
 /*   By: patrisor <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 15:19:20 by patrisor          #+#    #+#             */
-/*   Updated: 2019/09/13 02:10:43 by patrisor         ###   ########.fr       */
+/*   Updated: 2019/09/23 23:56:13 by patrisor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void		put_instructions(int code)
 		ft_putendl("Left Mouse Down: Pan in any direction");
 		ft_putendl("0: reset fractal");
 		ft_putendl("\n----------COLORS----------\n");
-		ft_putendl("1 - 4: Change Colors");
+		ft_putendl("1 - 6: Change Colors");
 		ft_putendl("L: Linear Colors\n");
 	}
 }

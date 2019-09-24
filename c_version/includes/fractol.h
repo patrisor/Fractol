@@ -6,7 +6,7 @@
 /*   By: patrisor <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/17 20:51:29 by patrisor          #+#    #+#             */
-/*   Updated: 2019/09/22 06:27:51 by patrisor         ###   ########.fr       */
+/*   Updated: 2019/09/23 23:31:31 by patrisor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -134,7 +134,8 @@ struct				s_mlx
 	pid_t		pid;
 };
 
-void				calc_z(t_viewport *env, t_complex *tmp_z, t_complex z, t_complex c);
+void				calc_z(t_viewport *env, t_complex *tmp_z,
+		t_complex z, t_complex c);
 t_complex			abs_sqr(t_complex z);
 void				put_instructions(int code);
 t_mlx				*mlxdel(t_mlx *mlx);

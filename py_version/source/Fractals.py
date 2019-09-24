@@ -6,9 +6,17 @@
 #    By: patrisor <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/08/21 23:00:27 by patrisor          #+#    #+#              #
-#    Updated: 2019/09/08 07:14:17 by patrisor         ###   ########.fr        #
+#    Updated: 2019/09/24 00:46:09 by patrisor         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+class Fractal:
+    def __init__(self):
+        self.zoom = 1
+        self.cX = 0
+        self.cY = 0
+        self.moveX = 0
+        self.moveY = 0
 
 def getColorCode():
     return [i for i in range(10)]
@@ -41,12 +49,19 @@ def mandelbrot(g, h, w, m):
             color = (colorCode[i] if i < m else colorCode[0])
             g[r][c] = color
 
-def julia(g, h, w, m, inp):
+def julia(g, h, w, m, frac):
+    '''
     arr = inp.split(',')
     zoom = float(arr[4])
     #cX, cY = -0.7, 0.27015
     cX, cY = float(arr[0]), float(arr[1])
     moveX, moveY = float(arr[2]), float(arr[3])
+    '''
+    zoom = frac.zoom
+    cX = frac.cX
+    cY = frac.cY
+    moveX = frac.moveX
+    moveY = frac.moveY
     for c in range(w):
         for r in range(h):
             c_re = 1.5 * (c - w / 2) / (0.5 * zoom * w) + moveX
