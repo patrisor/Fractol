@@ -30,10 +30,10 @@ Also a command-line version written in python, where ASCII characters and ANSII 
 * L: Linear Colors
 
 ## [Examples](https://github.com/patrisor/Fractol/tree/master/examples)
-<a><img src="https://github.com/patrisor/Fractol/tree/master/examples/1.png" align="center" height="210" width="425"></a>
-<a><img src="https://github.com/patrisor/Fractol/tree/master/examples/2.png" align="center" height="210" width="425"></a>
+<a><img src="https://github.com/patrisor/Fractol/blob/master/examples/1.png" align="center" height="210" width="425"></a>
+<a><img src="https://github.com/patrisor/Fractol/blob/master/examples/2.png" align="center" height="210" width="425"></a>
 
-<a><img src="https://github.com/patrisor/Fractol/tree/master/examples/3.png" align="center" height="210" width="210" ></a>
-<a><img src="https://github.com/patrisor/Fractol/tree/master/examples/4.png" align="center" height="210" width="210"></a>
-<a><img src="https://github.com/patrisor/Fractol/tree/master/examples/5.png" align="center" height="210" width="210"></a>
-<a><img src="https://github.com/patrisor/Fractol/tree/master/examples/6.png" align="center" height="210" width="210"></a>
+<a><img src="https://github.com/patrisor/Fractol/blob/master/examples/3.png" align="center" height="210" width="210" ></a>
+<a><img src="https://github.com/patrisor/Fractol/blob/master/examples/4.png" align="center" height="210" width="210"></a>
+<a><img src="https://github.com/patrisor/Fractol/blob/master/examples/5.png" align="center" height="210" width="210"></a>
+<a><img src="https://github.com/patrisor/Fractol/blob/master/examples/6.png" align="center" height="210" width="210"></a>
