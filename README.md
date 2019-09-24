@@ -9,6 +9,7 @@ A multi-threaded fractal generator rendered with [MinilibX](https://github.com/p
 * burningship
 * excalibur
 * enigma
+
 Also a command-line version written in python, where ASCII characters and ANSII colors define individual pixels. Handles Mandelbrot and Julia.
 
 ## Controls
@@ -16,8 +17,8 @@ Also a command-line version written in python, where ASCII characters and ANSII 
 * P: Pause (Julia set)
 * \[ : Less Iterations
 * \] : More Iterations
-* - : Zoom Out
-* = : Zoom In
+* dash : Zoom Out
+* equals : Zoom In
 * Scroll Wheel: Zoom where mouse is
 * KEY\_DOWN: Move Fractal Down
 * KEY\_UP: Move Fractal Up
@@ -28,11 +29,11 @@ Also a command-line version written in python, where ASCII characters and ANSII 
 * 1 - 6: Change Colors 
 * L: Linear Colors
 
-## [Examples](https://github.com/patrisor/Fractol/examples)
-<a><img src="https://github.com/patrisor/Fractol/examples/1.png" align="center" height="210" width="425"></a>
-<a><img src="https://github.com/patrisor/Fractol/examples/2.png" align="center" height="210" width="425"></a>
+## [Examples](https://github.com/patrisor/Fractol/tree/master/examples)
+<a><img src="https://github.com/patrisor/Fractol/tree/master/examples/1.png" align="center" height="210" width="425"></a>
+<a><img src="https://github.com/patrisor/Fractol/tree/master/examples/2.png" align="center" height="210" width="425"></a>
 
-<a><img src="https://github.com/patrisor/Fractol/examples/3.png" align="center" height="210" width="210" ></a>
-<a><img src="https://github.com/patrisor/Fractol/examples/4.png" align="center" height="210" width="210"></a>
-<a><img src="https://github.com/patrisor/Fractol/examples/5.png" align="center" height="210" width="210"></a>
-<a><img src="https://github.com/patrisor/Fractol/examples/6.png" align="center" height="210" width="210"></a>
+<a><img src="https://github.com/patrisor/Fractol/tree/master/examples/3.png" align="center" height="210" width="210" ></a>
+<a><img src="https://github.com/patrisor/Fractol/tree/master/examples/4.png" align="center" height="210" width="210"></a>
+<a><img src="https://github.com/patrisor/Fractol/tree/master/examples/5.png" align="center" height="210" width="210"></a>
+<a><img src="https://github.com/patrisor/Fractol/tree/master/examples/6.png" align="center" height="210" width="210"></a>
