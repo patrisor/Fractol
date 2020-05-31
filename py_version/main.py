@@ -33,8 +33,8 @@ def process_input(prompt, frac):
     elif inp == 'p': frac.cX += 0.1
     elif inp == '[': frac.cY -= 0.1
     elif inp == ']': frac.cY += 0.1
-    elif inp == '-': frac.zoom *= 0.5
-    elif inp == '=': frac.zoom *= 2
+    elif inp == '-': frac.zoom *= 0.99
+    elif inp == '=': frac.zoom *= 1.01
 
 def main():
     if len(sys.argv) != 5: return(die("usage: python3 main.py [FRACTAL] [WIN_HEIGHT] [WIN_WIDTH] [MAX_ITERATIONS]"))
